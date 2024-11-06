@@ -3,18 +3,17 @@ import CardWrapper from "../../ui/dashboard/cards";
 import LatestInvoices from "../../ui/dashboard/latest-invoices";
 import RevenueChart from "../../ui/dashboard/revenue-chart";
 import { lusitana } from "../../ui/fonts";
-import {
-  CardsSkeleton,
-  LatestInvoicesSkeleton,
-  RevenueChartSkeleton,
-} from "@/app/ui/skeletons";
+import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from "@/app/ui/skeletons";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 export default async function Page() {
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2x1`}>
-        Dashboard
-      </h1>
+      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2x1`}>Dashboard</h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Suspense fallback={<CardsSkeleton />}>
           <CardWrapper />
